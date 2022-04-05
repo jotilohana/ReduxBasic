@@ -6,13 +6,11 @@ const Home = props => {
   console.log(props);
   return (
     <View style={{flex: 1, backgroundColor: 'blue'}}>
-      <Text style={{color: 'white'}}>hi</Text>
+      <Text style={{color: 'white'}}>{props.hey}</Text>
     </View>
   );
 };
-const mapStateToProps = state => {
-  let {hey} = state.name;
-  console.log(hey)
-  return (hey);
-};
+const mapStateToProps = state => ({
+  hey: state.name,
+});
 export default connect(mapStateToProps, null)(Home);

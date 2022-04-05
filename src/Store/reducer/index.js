@@ -1,5 +1,6 @@
 const Name = {
-    name:'jk'
+    name:'jk',
+    email:'jklohana'
 }
 
 export default (STATE= Name) =>{
