@@ -5,18 +5,25 @@ import {connect} from 'react-redux';
 import {set_data} from '../Store/actions';
 import {useNavigation} from '@react-navigation/native';
 const Home = props => {
-  console.log(props);
+  const user = {name: 'jk', email: 'jklohana208@gmail.com'};
+  console.log(props.Users);
   const navigation = useNavigation();
   return (
     <View style={{flex: 1, backgroundColor: 'blue'}}>
-      <Text style={{color: 'white'}}>{props.hey}</Text>
-      <Text style={{color: 'white'}}>{props.email}</Text>
+      {
+        props.Users.map((val, i)=>{
+          return(
+            <Text style={{color: 'white'}}>{val.email}</Text>
+            // <Text style={{color: 'white'}}>{val.email}</Text>
+          )
+        })
+      }
       <Text style={{color: 'white'}}>{props.home}</Text>
       <Text style={{color: 'white'}}>{props.data}</Text>
-      <TouchableOpacity onPress={() => props.set_data('jkjkjk')}>
+      {/* <TouchableOpacity onPress={() => props.set_data('jkjkjk')}>
         <Text>Dispatch</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => props.set_data('khi')}>
+      </TouchableOpacity> */}
+      <TouchableOpacity onPress={() => props.set_data(user)}>
         <Text>Dispatch</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Home2')}>
@@ -26,8 +33,9 @@ const Home = props => {
   );
 };
 const mapStateToProps = state => ({
-  hey: state.app.name,
-  email: state.app.email,
+  // hey: state.app.name,
+  // email: state.app.email,
+  Users: state.app.Users,
   home: state.home.name,
   data: state.home.data,
 });
