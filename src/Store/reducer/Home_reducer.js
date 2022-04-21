@@ -4,6 +4,6 @@ const Home = {
 };
 
 export default (STATE = Home, action) => {
-    console.log("actions=>", action)
+  console.log('Home_actions=>', action);
   return STATE;
 };
