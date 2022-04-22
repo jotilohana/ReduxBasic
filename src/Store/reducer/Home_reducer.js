@@ -1,6 +1,6 @@
 const Home = {
-  name: 'HomeScreen',
-  data: 'jklohana',
+  Address1: 'Khi',
+  Address2: 'Isl',
 };
 
 export default (STATE = Home, action) => {

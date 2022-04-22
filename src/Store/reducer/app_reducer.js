@@ -2,7 +2,7 @@ const Name = {
   Users: [
     {
       name: 'jk',
-      email: 'jklohana',
+      email: 'joti20@gmail.com',
     },
   ],
 };
